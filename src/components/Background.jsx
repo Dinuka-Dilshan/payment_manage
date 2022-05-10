@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Background = ({ children, title, button = "Home" }) => {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -20,11 +24,64 @@ const Background = ({ children, title, button = "Home" }) => {
           justifyContent: "space-between",
         }}
       >
-        {title}
+        <div> {title}</div>
 
-        <button className="btn fw-bold px-4" style={{ backgroundColor: "#817A7A" }}>
-          {button}
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              navigate("/channel/welcome");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            {button}
+          </button>
+          <button
+            onClick={() => {
+              navigate("/channel/add");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Add Channel
+          </button>
+          <button
+            onClick={() => {
+              navigate("/Channel/report");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Channel Report
+          </button>
+          <button
+            onClick={() => {
+              navigate("/salary/manage");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Manage Salary
+          </button>
+          <button
+            onClick={() => {
+              navigate("/salary/counting");
+            }}
+            className="btn fw-bold"
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Salary Counting
+          </button>
+          <button
+            onClick={() => {
+              navigate("/salary/report");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Salary Report
+          </button>
+        </div>
       </div>
       {children}
     </div>

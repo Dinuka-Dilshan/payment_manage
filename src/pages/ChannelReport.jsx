@@ -1,9 +1,9 @@
 import Background from "../components/Background";
 
-const SalaryReport = () => {
+const ChannelReport = () => {
   return (
     <div>
-      <Background title={"Salary Report Details"}>
+      <Background title={"Channel Report Details"}>
         <div
           style={{
             marginTop: "0.5rem",
@@ -13,7 +13,7 @@ const SalaryReport = () => {
         >
           <div style={{ width: "50%", display: "flex", alignItems: "center" }}>
             <label style={{ marginRight: "2rem" }} htmlFor="">
-              Salary ID
+              Channel ID
             </label>
             <input type="text" placeholder="" style={{ maxWidth: "2rem " }} />
           </div>
@@ -80,4 +80,4 @@ const SalaryReport = () => {
   );
 };
 
-export default SalaryReport;
+export default ChannelReport;
