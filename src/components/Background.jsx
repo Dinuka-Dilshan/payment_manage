@@ -1,4 +1,4 @@
-const Background = ({ children, title }) => {
+const Background = ({ children, title, button }) => {
   return (
     <div
       style={{
@@ -16,9 +16,14 @@ const Background = ({ children, title }) => {
           fontSize: "1.5rem",
           borderBottom: "2px solid white",
           paddingBottom: "0.8rem",
+          display:"flex",
+          justifyContent: "space-between"
+
         }}
       >
         {title}
+      
+        <button className="btn">{button}</button>
       </div>
       {children}
     </div>
