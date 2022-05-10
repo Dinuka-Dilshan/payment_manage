@@ -1,4 +1,8 @@
-const Background = ({ children, title, button }) => {
+import { useNavigate } from "react-router-dom";
+
+const Background = ({ children, title, button = "Home" }) => {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -7,7 +11,7 @@ const Background = ({ children, title, button }) => {
         height: "100vh",
         padding: "2rem",
         boxSizing: "border-box",
-        color:'white'
+        color: "white",
       }}
     >
       <div
@@ -16,14 +20,68 @@ const Background = ({ children, title, button }) => {
           fontSize: "1.5rem",
           borderBottom: "2px solid white",
           paddingBottom: "0.8rem",
-          display:"flex",
-          justifyContent: "space-between"
-
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        {title}
-      
-        <button className="btn">{button}</button>
+        <div> {title}</div>
+
+        <div>
+          <button
+            onClick={() => {
+              navigate("/channel/welcome");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            {button}
+          </button>
+          <button
+            onClick={() => {
+              navigate("/channel/add");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Add Channel
+          </button>
+          <button
+            onClick={() => {
+              navigate("/Channel/report");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Channel Report
+          </button>
+          <button
+            onClick={() => {
+              navigate("/salary/manage");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Manage Salary
+          </button>
+          <button
+            onClick={() => {
+              navigate("/salary/counting");
+            }}
+            className="btn fw-bold"
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Salary Counting
+          </button>
+          <button
+            onClick={() => {
+              navigate("/salary/report");
+            }}
+            className="btn fw-bold "
+            style={{ backgroundColor: "#817A7A" }}
+          >
+            Salary Report
+          </button>
+        </div>
       </div>
       {children}
     </div>

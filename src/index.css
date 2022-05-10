@@ -19,6 +19,13 @@ input[type="number"] {
   font-size: 1rem;
 }
 
+input[type="date"] {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  width: 10rem !important;
+  font-size: 1rem;
+}
+
 th {
   min-width: 10rem;
   text-align: left;
