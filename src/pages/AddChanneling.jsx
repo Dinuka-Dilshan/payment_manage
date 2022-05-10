@@ -92,13 +92,13 @@ const AddChanneling = () => {
               </div>
 
               <div>
-                <input type="number" placeholder="00:00" />
+                <input type="time" placeholder="00:00" />
                 <label style={{ marginLeft: "5rem" }} htmlFor="">
                   To
                 </label>
                 <input
                   style={{ marginLeft: "1rem" }}
-                  type="number"
+                  type="time"
                   placeholder="00:00"
                 />
               </div>
