@@ -12,11 +12,11 @@ const AddChanneling = () => {
               </div>
               <div>
                 <span style={{ paddingRight: "10rem" }}>
-                  <input type={"radio"} />
+                  <input type={"radio"} name="roomtype"/>
                   <span style={{ paddingLeft: "0.5rem" }}>Room</span>
                 </span>
                 <span>
-                  <input type={"radio"} />
+                  <input type={"radio"} name="roomtype"/>
                   <span style={{ paddingLeft: "0.5rem" }}>Laboratory</span>
                 </span>
               </div>
