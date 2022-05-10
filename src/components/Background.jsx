@@ -29,7 +29,7 @@ const Background = ({ children, title, button = "Home" }) => {
         <div>
           <button
             onClick={() => {
-              navigate("/channel/welcome");
+              navigate("/");
             }}
             className="btn fw-bold "
             style={{ backgroundColor: "#817A7A" }}

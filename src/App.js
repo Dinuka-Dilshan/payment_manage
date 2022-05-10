@@ -15,7 +15,7 @@ function App() {
       <Route path="/salary/counting" element={<CountingSalary />} />
       <Route path="/salary/report" element={<SalaryReport/>} />
       <Route path="/salary/working" element={<AddWorking/>} />
-      <Route path="/channel/welcome" element={<ChannellingWelcome/>} />
+      <Route path="/" element={<ChannellingWelcome/>} />
       <Route path="/channel/report" element={<ChannelReport/>} />
       <Route path="/channel/add" element={<AddChanneling/>} />
     </Routes>
