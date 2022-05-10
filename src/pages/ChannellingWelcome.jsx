@@ -1,4 +1,5 @@
 import { Row, Col, Form, Card, Tabs, Tab } from "react-bootstrap";
+import AddLocation from "../components/AddLocation";
 import Background from "../components/Background";
 
 const AddWorking = () => {
@@ -88,7 +89,7 @@ const AddWorking = () => {
             className="mb-3"
           >
             <Tab eventKey="location" title="Add Location">
-              sdhj
+              <AddLocation/>
             </Tab>
             <Tab eventKey="nat" title="Not Available Time">
               dsfg
