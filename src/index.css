@@ -12,6 +12,20 @@ input[type="text"] {
   font-size: 1rem;
 }
 
+.room > input[type="text"] {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  min-width: 5rem;
+  font-size: 1rem;
+}
+
+.room-long > input[type="text"] {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  min-width: 29.9rem;
+  font-size: 1rem;
+}
+
 input[type="number"] {
   margin-right: 0.5rem;
   padding: 0.5rem;

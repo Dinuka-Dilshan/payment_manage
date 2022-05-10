@@ -10,6 +10,7 @@ import AddLocationDetails from "./pages/AddLocationDetails";
 
 import ChannelReport from './pages/ChannelReport';
 import AddChanneling from "./pages/AddChanneling";
+import ManageChannellingDetails from "./pages/ManageChannellingDetails";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/channel/welcome" element={<ChannellingWelcome/>} />
       <Route path="/channel/report" element={<ChannelReport/>} />
       <Route path="/channel/add" element={<AddChanneling/>} />
+      <Route path="/channel/manage" element={<ManageChannellingDetails/>} />
     </Routes>
   );
 }
