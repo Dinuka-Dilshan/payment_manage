@@ -1,4 +1,4 @@
-const Background = ({ children, title, button }) => {
+const Background = ({ children, title, button = "Home" }) => {
   return (
     <div
       style={{
@@ -7,7 +7,7 @@ const Background = ({ children, title, button }) => {
         height: "100vh",
         padding: "2rem",
         boxSizing: "border-box",
-        color:'white'
+        color: "white",
       }}
     >
       <div
@@ -16,14 +16,15 @@ const Background = ({ children, title, button }) => {
           fontSize: "1.5rem",
           borderBottom: "2px solid white",
           paddingBottom: "0.8rem",
-          display:"flex",
-          justifyContent: "space-between"
-
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
         {title}
-      
-        <button className="btn">{button}</button>
+
+        <button className="btn fw-bold px-4" style={{ backgroundColor: "#817A7A" }}>
+          {button}
+        </button>
       </div>
       {children}
     </div>
