@@ -18,13 +18,13 @@ const ManageSalary = () => {
     validationSchema: Yup.object({
       staff: Yup.string().required("*required"),
       staff_id: Yup.string().required("*required"),
-      name: Yup.string().required("*required"),
+      name: Yup.string("").required("*required"),
       specialization: Yup.string().required("*required"),
       medical_section: Yup.string().required("*required"),
       working_hours: Yup.string().required("*required"),
-      working_days: Yup.number().required("*required"),
-      salary: Yup.number().required("*required"),
-      ot_hours: Yup.number().required("*required"),
+      working_days: Yup.number("").required("*required"),
+      salary: Yup.number("").required("*required"),
+      ot_hours: Yup.number("").required("*required"),
     }),
 
     onSubmit: (values) => {
@@ -138,8 +138,11 @@ const ManageSalary = () => {
             <div style={{ width: "15%" }}>
               <label htmlFor="">
                 Specialization
-                {formik.touched.specialization && formik.errors.specialization ? (
-                  <span className="text-danger">{formik.errors.specialization}</span>
+                {formik.touched.specialization &&
+                formik.errors.specialization ? (
+                  <span className="text-danger">
+                    {formik.errors.specialization}
+                  </span>
                 ) : null}
               </label>
             </div>
@@ -164,8 +167,11 @@ const ManageSalary = () => {
             <div style={{ width: "15%" }}>
               <label htmlFor="">
                 Medical Section
-                {formik.touched.medical_section && formik.errors.medical_section ? (
-                  <span className="text-danger">{formik.errors.medical_section}</span>
+                {formik.touched.medical_section &&
+                formik.errors.medical_section ? (
+                  <span className="text-danger">
+                    {formik.errors.medical_section}
+                  </span>
                 ) : null}
               </label>
             </div>
@@ -191,7 +197,9 @@ const ManageSalary = () => {
               <label htmlFor="">
                 Working Hours
                 {formik.touched.working_hours && formik.errors.working_hours ? (
-                  <span className="text-danger">{formik.errors.working_hours}</span>
+                  <span className="text-danger">
+                    {formik.errors.working_hours}
+                  </span>
                 ) : null}
               </label>
             </div>
@@ -234,7 +242,9 @@ const ManageSalary = () => {
               <label htmlFor="">
                 Working Days{" "}
                 {formik.touched.working_days && formik.errors.working_days ? (
-                  <span className="text-danger">{formik.errors.working_days}</span>
+                  <span className="text-danger">
+                    {formik.errors.working_days}
+                  </span>
                 ) : null}
               </label>
             </div>
@@ -266,66 +276,71 @@ const ManageSalary = () => {
             </div>
 
             <input
-              type="text"
+              type="number"
               name="salary"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.salary}
               placeholder="Rs."
-              style={{ width: "6rem" }}
+              style={{ width: "8rem" }}
             />
           </div>
-          <button type="submit">Submit</button>
+
+          <div
+            style={{
+              marginTop: "0.5rem",
+
+              position: "fixed",
+              top: "30%",
+              right: "5%",
+            }}
+          >
+            <div style={{ padding: "1rem", marginLeft: "12rem" }}>
+              <input
+                type="text"
+                placeholder="Search Staff ID"
+                style={{ width: "6rem" }}
+              />
+            </div>
+
+            <div style={{ overflowX: "scroll", maxHeight: "15rem" }}>
+              <table>
+                <tr>
+                  <th>Staff ID</th>
+                  <th>Name</th>
+                  <th>Specialization</th>
+                  <th>Salary</th>
+                </tr>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 9, 4, 5, 6, 1, 2, 3].map(
+                  (e) => (
+                    <tr>
+                      <td>001</td>
+                      <td>test Name</td>
+                      <td>test</td>
+                      <td>test</td>
+                    </tr>
+                  )
+                )}
+              </table>
+            </div>
+          </div>
+
+          <div style={{ position: "fixed", bottom: "5%" }}>
+            <button type="button" className="btn btn-secondary">Go Back</button>
+          </div>
+
+          <div style={{ position: "fixed", bottom: "5%", right: "5%" }}>
+            <button type="submit" className="btn btn-secondary">
+              Update
+            </button>
+            <button type="button" className="btn btn-secondary">
+              Delete
+            </button>
+            <button type="button" className="btn btn-secondary">
+              Generate Report
+            </button>
+          </div>
         </form>
-
-        <div
-          style={{
-            marginTop: "0.5rem",
-
-            position: "fixed",
-            top: "30%",
-            right: "5%",
-          }}
-        >
-          <div style={{ padding: "1rem", marginLeft: "12rem" }}>
-            <input
-              type="text"
-              placeholder="Search Staff ID"
-              style={{ width: "6rem" }}
-            />
-          </div>
-
-          <div style={{ overflowX: "scroll", maxHeight: "20rem" }}>
-            <table>
-              <tr>
-                <th>Staff ID</th>
-                <th>Name</th>
-                <th>Specialization</th>
-                <th>Salary</th>
-              </tr>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 9, 4, 5, 6, 1, 2, 3].map(
-                (e) => (
-                  <tr>
-                    <td>001</td>
-                    <td>test Name</td>
-                    <td>test</td>
-                    <td>test</td>
-                  </tr>
-                )
-              )}
-            </table>
-          </div>
-        </div>
-
-        <div style={{ position: "fixed", bottom: "5%" }}>
-          <button className="btn">Go Back</button>
-        </div>
-
-        <div style={{ position: "fixed", bottom: "5%", right: "5%" }}>
-          <button className="btn">Update</button>
-          <button className="btn">Delete</button>
-          <button className="btn">Generate Report</button>
-        </div>
       </Background>
     </div>
   );
